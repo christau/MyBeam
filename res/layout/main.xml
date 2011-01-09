@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout android:id="@+id/LinearLayout01"
+	android:layout_width="72dip" android:layout_height="72dip"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<ImageButton android:id="@+id/Button01"
+		android:layout_width="72dip" android:layout_height="72dip"
+		android:layout_gravity="center_horizontal" android:background="@color/transparent"></ImageButton>
+</LinearLayout>

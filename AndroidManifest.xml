@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="1"
+	android:versionName="1.0" xmlns:android="http://schemas.android.com/apk/res/android" package="de.taubenheim.mybeam">
+	<application android:icon="@drawable/icon" android:label="@string/app_name"
+		android:debuggable="true">
+		<receiver android:name="BeamWidget" android:label="@string/app_name">
+			<meta-data android:resource="@xml/togglewidget"
+				android:name="android.appwidget.provider"></meta-data>
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+				<action android:name="de.taubenheim.intent.action.STATUS_CHANGED" />
+				<action android:name="de.taubenheim.intent.action.STATUS_TOGGLED" />
+				<action android:name="android.intent.action.SCREEN_OFF"></action>
+			</intent-filter>
+
+		</receiver>
+
+		<service android:name="BeamService"></service>
+	</application>
+
+
+
+	<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+	<uses-permission android:name="android.permission.CAMERA"></uses-permission>
+</manifest> 
