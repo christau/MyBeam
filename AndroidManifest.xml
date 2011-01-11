@@ -12,14 +12,7 @@
 				<action android:name="de.taubenheim.intent.action.STATUS_TOGGLED" />
 				<action android:name="android.intent.action.SCREEN_OFF"></action>
 			</intent-filter>
-
 		</receiver>
-
 		<service android:name="BeamService"></service>
 	</application>
-
-
-
-	<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
-	<uses-permission android:name="android.permission.CAMERA"></uses-permission>
 </manifest> 

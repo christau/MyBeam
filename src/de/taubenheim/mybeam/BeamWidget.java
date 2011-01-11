@@ -25,13 +25,11 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 import android.app.PendingIntent;
-import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.widget.RemoteViews;
 
@@ -67,8 +65,6 @@ public class BeamWidget extends AppWidgetProvider
 				} else
 				{
 					PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean("de.taubenheim.mybeam.state", false).commit();
-					Vibrator vb = (Vibrator) context.getSystemService(Service.VIBRATOR_SERVICE);
-//					vb.vibrate(new long[] { 100, 100, 100, 100 }, -1);
 					runScriptAsRoot(context, "echo 0 > /sys/devices/platform/flashlight.0/leds/flashlight/brightness", new StringBuilder(), 10000);
 					Intent i = new Intent();
 					i.setClassName("de.taubenheim.mybeam", BeamService.class.getName());
@@ -138,6 +134,10 @@ public class BeamWidget extends AppWidgetProvider
 		return runner.exitcode;
 	}
 
+	/**
+	 * This class is taken from the project droidwall  http://droidwall.googlecode.com/
+	 *
+	 */
 	private static final class ScriptRunner extends Thread
 	{
 		private final File file;
