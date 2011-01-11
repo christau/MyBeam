@@ -15,4 +15,5 @@
 		</receiver>
 		<service android:name="BeamService"></service>
 	</application>
+	<uses-permission android:name="android.permission.CAMERA"></uses-permission>
 </manifest> 
